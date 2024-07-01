@@ -58,8 +58,7 @@ namespace bodyPart
 
             public bool isRightNum(int userInput, int diceResult) 
             {
-                if (diceResult == userInput) { return true; }
-                else { return false; }
+                return diceResult == userInput;
             }
         }
     }
