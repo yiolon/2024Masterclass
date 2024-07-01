@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace bodyPart
 {
-    class _main 
+    partial class _main 
     {
         static void Main(string[] args)
         {
@@ -23,8 +23,10 @@ namespace bodyPart
 
                 if (nextStep) 
                 {
-                    if (userResult == diceResult){
+                    if (UserResult.isRightNum(userResult, diceResult)==true)
+                    {
                         Console.WriteLine("You win");
+                        break;
                     }
                     else 
                     { 
@@ -36,30 +38,6 @@ namespace bodyPart
  
             
 
-        }
-
-        public class RandomUtil
-        {
-            private Random random = new Random();
-            public int RandomNumGenerater()
-            {
-                int randomNum = random.Next(1, 7);
-                return randomNum;
-            }
-        }
-
-        public class UserResult
-        {
-            public static bool isValidNum(string input, out int result) 
-            {
-                bool userInputIsValid = int.TryParse(input, out result);
-                return userInputIsValid;
-            }
-
-            public bool isRightNum(int userInput, int diceResult) 
-            {
-                return diceResult == userInput;
-            }
         }
     }
 
