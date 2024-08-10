@@ -25,7 +25,6 @@ namespace A3_CookiesCookbook.Class
     public class CoconutFlour : Ingredients, ISieve
     {
         public CoconutFlour() { id = 2; }
-
         public override string name => "Coconut flour";
 
         public override string Getdescription() => $"{GetSieveDescription()}{base.Getdescription()}";
